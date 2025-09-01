@@ -1,5 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 *{
 margin: 0;
 padding: 0;
 box-sizing: border-box;
+font-family: 'Roboto';
+}
+.encabezado{
+  display: flex;
+  flex-wrap: nowrap;
+  flex: 0 0 auto;
+  width: 100%;
+  height: 130px;
+  padding: 1.2em;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #494848;
+  justify-content: space-between;
+}
+.logo{
+  width: 25%;
+  height: 100%;   
+}
+.img-logo{
+    width: 100%;
+    height: auto;
+}
+.busqueda{
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+}
+.busqueda input{
+    width: 100%;
+    height: auto;
+    padding: 1em;
+    border-radius: 15px;
+    border-color: slateblue;
+    background-color: #494848;
+
+}
+.busqueda input::placeholder{
+    font-size: 0.8em;
+    color: #928a8a;
+    font-family: 'Roboto';
+}
+.btn-lateral{
+    width: 25%;
+}
+.list-lat{
+  display: flex;
+  list-style: none;
+  height: auto;
+  justify-content: flex-end;
+  padding: 0;
+  gap: 1em;
+}
+.content{
+    width: 100%;
+    height: auto;
+}
+.cont-main{
+    width: 100%;
+    padding: 1.2em;
+}
+.nav-central{
+    background-color: aqua;
+    width: 60%;
+    height: 100px;
+    margin: 0 auto;
+
+}
+.bnn-general{
+    margin: 0 auto;
+    width: 80%;
+    height: auto;
+    border-radius: 15px;
+    object-fit: cover;
+    overflow: hidden;
+}
+.foto1{
+    width: 100%;
+    height: auto;
+}
+.destacados{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 1em;
+    width: 70%;
+    height: auto;
+    margin: 0 auto;
+    margin-top: 1em;
+}
+
+.cont-armado{
+    width: 100%;
+    padding: 1.2em;
+}
+.bnn-armado{
+    display: block;
+    margin: 0 auto;
+    width: 70%;
+    height: 250px;
+    border-radius: 15px;
+    background-image: url(imagenes/amdz.png);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: transform 1.5s ease;
+}
+.bnn-armado a{
+    display: block;
+}
+.bnn-armado:hover{
+    transform: scale(1.01);
+}
+/* Estilos small card*/
+.small-card{
+    display: flex;
+    flex-direction: row;
+    border: 1px solid #121212;
+    border-radius: 8px;
+    padding: 1em;
+    gap: 0.5em;
+}
+.img-s-card{
+    width: 100%;
+    height: auto;
+}
+
+.desc-s-card{
+    width: auto;
+}
+.desc-s-card h4{
+    font-size: 1em;
+}
+.precio-s-card{
+    font-size: 1.2em;
+    font-weight: bold;
+}
+/* Estilos small card*/
+.cont-cat{
+    display: flex;
+    width: 65%;
+    margin: 0 auto;
+    height: 400px;
+    gap: 1em;
+    padding: 1.2em;
+}
+.cont-g{
+    width: auto;
+}
+.caja-g{
+    width: 300px;
+    height: 100%;
+}
+.caja-g img{
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+}
+.cont-n{
+    width: auto;
+    display: flex;
+    flex-wrap:wrap;
+    gap: 1em;
+}
+.caja-n{
+    width: 190px;
+    height: 175px;
+}
+.caja-n img{
+    width: 100%;
+    height: 175px;
+    object-fit: cover;
+    overflow: hidden;
+    border-radius: 8px;
+}
+.ofertas{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 1em;
+    width: 70%;
+    height: auto;
+    margin: 0 auto;
+    margin-top: 1em;
+}
+.promos{
+    border: 1px solid black;
+    width: 100%;
+    height: 250px;
+    margin: 0 auto;
+    margin-top: 1em;
 }
