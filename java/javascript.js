@@ -1,7 +1,7 @@
-
+// card pequeña
 function smallCardDinamic(contenedor){
     const smallCard=document.createElement('div');
-    smallCard.classList.add('small-card');
+    smallCard.setAttribute('class','small-card shadow');
     contenedor.appendChild(smallCard);
     const contImgSCard=document.createElement('div');
     contImgSCard.classList.add('cont-img-s-card');
@@ -33,12 +33,93 @@ function smallCardDinamic(contenedor){
 const destacados=document.getElementById('destacados')
 const ofertas=document.querySelector('.ofertas')
 
-for(i=0;i<=5;i++){
+for(let i=0;i<=5;i++){
     smallCardDinamic(destacados)
 
-}
-for(i=0;i<=5;i++){
+};
+for(let i=0;i<=5;i++){
     smallCardDinamic(ofertas)
 
-}
+};
+// card pequeña
+
+// dark mode
+const body=document.body
+const btnMode=document.getElementById('btn-mode')
+const icono=document.getElementById('icono')
+function modoOscuro(cont,boton){
+    if(cont.classList.contains('dark-mode')){
+        cont.classList.remove('dark-mode');
+        icono.src='imagenes/moon-stars-fill.svg'
+        
+
+    }else{
+        cont.classList.add('dark-mode');
+        icono.src='imagenes/sun-fill.svg'
+        
+       
+        
+    }
+};
+btnMode.addEventListener('click',()=>modoOscuro(body));
+
+function elegirMarca(){
+    const btnAsus=document.getElementById('btnAsus');
+    const btnLogi=document.getElementById('btnLogi');
+    const btnSteel=document.getElementById('btnSteel');
+    const btnCorsair=document.getElementById('btnCorsair');
+    const btnThermal=document.getElementById('btnThermal');
+    const imgMarca=document.getElementById('imgMarc')
+    btnAsus.addEventListener('click',()=>{
+        imgMarca.src='imagenes/asus-logo.png'
+    })
+    btnLogi.addEventListener('click',()=>{
+        imgMarca.src='imagenes/logi-logo.png'
+    })
+    btnSteel.addEventListener('click',()=>{
+        imgMarca.src='imagenes/steel-logo.png'
+    })
+    btnCorsair.addEventListener('click',()=>{
+        imgMarca.src='imagenes/corsair-logo.png'
+    })
+    btnThermal.addEventListener('click',()=>{
+        imgMarca.src='imagenes/thermal-logo.png'
+    })
+};
+elegirMarca();
+
+//BigCard
+function BigCardDinamic(contenido){
+const BigCard=document.createElement('div');
+BigCard.setAttribute('class','card');
+BigCard.style.width='16rem';
+contenido.appendChild(BigCard);
+const imgBCard=document.createElement('img')
+imgBCard.setAttribute('class','card-img-top');
+imgBCard.src='imagenes/asusTuf.png'
+imgBCard.alt='Imagen tarjeta grande';
+BigCard.appendChild(imgBCard);
+const cardBody=document.createElement('div');
+cardBody.setAttribute('class','card-body');
+BigCard.appendChild(cardBody);
+const cardTitle=document.createElement('h6');
+cardTitle.setAttribute('class','card-title');
+cardTitle.innerText='Notebook ASUS Vivobook Go 15 15.6" AMD Ryzen 5 7520U 8GB DDR5 SSD 512GB Win11 E1504FA-NJ179W';
+cardBody.appendChild(cardTitle);
+const bodySpan=document.createElement('span');
+bodySpan.setAttribute('class','card-text');
+bodySpan.innerHTML='<s>$740.000</s>';
+cardBody.appendChild(bodySpan);
+const bodyPCardB=document.createElement('p');
+bodyPCardB.setAttribute('class','card-text fs-5');
+bodyPCardB.innerText='$ 850.000';
+cardBody.appendChild(bodyPCardB)
+};
+
+const colMarc=document.getElementById('colMarc');
+for(let i=0;i<=2;i++){
+    BigCardDinamic(colMarc)
+};
+
+
 

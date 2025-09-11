@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 </head>
 <body>
-    <header class="encabezado">
+    <header class="encabezado ">
         <div class="logo">
           <img src="imagenes/logo-adotti.png" alt="logo-adotti" class="img-logo">
         </div>
@@ -18,14 +18,35 @@
         </div>
         <div class="btn-lateral">
           <ul class="list-lat">
-            <li><i class="bi bi-person-workspace"style="font-size: 2rem; color: white;"></i></li>
-            <li><i class="bi bi-cart"style="font-size: 2rem; color: white;"></i></li>
-          </ul>
+                <li>
+                 <button aria-label="logueo">
+                    <i class="bi bi-person-workspace" style="font-size: 2rem; color: white;"></i>
+                </button>
+                </li>
+                <li>
+                <button aria-label="Carrito">
+                    <i class="bi bi-cart" style="font-size: 2rem; color: white;"></i>
+                </button>
+                 </li>
+                 <li class="d-flex justify-content-center align-items-center">
+                  <button aria-label="modo oscuro" id="btn-mode"> 
+                    <img src="imagenes/moon-stars-fill.svg" alt="icono" id="icono" width="32" height="32">
+                  </button>
+                 </li>
+            </ul>
+
         </div>
     </header>
     <div class="content">
     <div class="cont-main">
-        <nav class="nav-central"></nav>
+        <nav class="nav-central">
+            <ul class="lista-central">
+                <li><a href="#">Productos</a></li>
+                <li><a href="#">Armá tu PC</a></li>
+                <li><a href="#">Notebooks</a></li>
+                <li><a href="#">Ayuda</a></li>
+            </ul>
+        </nav>
         <div class="bnn-general">
             <div id="carouselExampleIndicators" class="carousel slide">
   <div class="carousel-indicators bg-dark bg-opacity-10">
@@ -62,9 +83,11 @@
     <span class="visually-hidden">Next</span>
   </button>
 </div>
-        </div>
-        <div class="destacados" id="destacados"></div>
     </div>
+        <div class="cont-dest">
+          <div class="destacados" id="destacados"></div>
+        </div>
+</div>
     <section class="cont-armado">
         <a href="#"><div class="bnn-armado"></div></a>
     </section>
@@ -87,22 +110,53 @@
         <div class="ofertas"></div>
     </section>
     <aside class="promos">promos</aside>
-    <section class="cont-marcas">
-        <div class="marcas"></div>
+    <section class="">
+      <div class="cont-head-marc">
+      <div class="cont-title-marc">
+        <p>Descubri las mejores marcas</p>
+      </div>
+        <div class="cont-btn-marc">
+          <button class="btn-marcas" id="btnAsus">Asus</button>
+          <button class="btn-marcas" id="btnLogi">Logitech</button>
+          <button class="btn-marcas" id="btnSteel">Steelseries</button>
+          <button class="btn-marcas" id="btnCorsair">Corsair</button>
+          <button class="btn-marcas" id="btnThermal">Thermaltake</button>
+        </div>
+      </div>
+      <div class="cont-prodcs">
+        <div id="colMarcBig">
+          <div class="cont-img-marc">
+            <img src="imagenes/asus-logo.png" alt="" id="imgMarc">
+          </div>
+        </div>
+        <div class="col-marc" id="colMarc"></div>
+      </div>
     </section>
     <footer>
-
-    </footer>
-
-
-
-
-
-
-
-
-
-      <span>Foto de <a href="https://unsplash.com/es/@na_creates?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Nassim Allia</a> en <a href="https://unsplash.com/es/fotos/altavoz-negro-y-rojo-con-luz-azul-YZmbiNkvpBM?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a></span>
+    <div class="footer-contenido">
+      <div class="cont-nos">
+        <ul class="nosotros">
+          <li><a href="#" class="disabled">Locales</a></li>
+          <li><a href="#" id="sobreNosotros">Sobre nosotros</a></li>
+          <li><a href="#" class="disabled">Términos y condiciones</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-links rounded shadow lg" id="contenedorDinamico"></div>
+    <div class="cont-redes">
+      <div class="redes">
+        <a href="https://www.facebook.com/"><img src="imagenes/facebook.svg" alt="Facebook"></a>
+        <a href="https://www.instagram.com/"><img src="imagenes/instagram.svg" alt="Instagram"></a>
+        <a href="https://x.com/home"><img src="imagenes/twitter.svg" alt="Twitter/X"></a>
+        <a href="https://web.whatsapp.com/"><img src="imagenes/whatsapp.svg" alt="Whatsapp"></a>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>&copy;2025 Lucas Sidotti.</p>
+      <a href="https://github.com/lucassidotti"><img src="imagenes/github.svg" alt="github"></a>
+      <span> Pagina con fines educativos imagenes obtenidas de <a href="https://unsplash.com/es/fotos/altavoz-negro-y-rojo-con-luz-azul-YZmbiNkvpBM?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a></span>
+    </div>
+  </footer>
     </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 <script src="java/javascript.js"></script>

@@ -6,6 +6,18 @@ padding: 0;
 box-sizing: border-box;
 font-family: 'Roboto';
 }
+/* dark-mode */
+body{
+    background-color: whitesmoke;
+    color: black;
+    transition: background-color 1s ease , color 1s ease;
+}
+
+body.dark-mode{
+    background-color: #333;
+    color: white;
+}
+/* dark-mode*/
 .encabezado{
   display: flex;
   flex-wrap: nowrap;
@@ -38,7 +50,8 @@ font-family: 'Roboto';
     padding: 1em;
     border-radius: 15px;
     border-color: slateblue;
-    background-color: #494848;
+    background-color: #424040;
+    color: whitesmoke;
 
 }
 .busqueda input::placeholder{
@@ -57,6 +70,13 @@ font-family: 'Roboto';
   padding: 0;
   gap: 1em;
 }
+.list-lat button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
 .content{
     width: 100%;
     height: auto;
@@ -66,11 +86,30 @@ font-family: 'Roboto';
     padding: 1.2em;
 }
 .nav-central{
-    background-color: aqua;
     width: 60%;
-    height: 100px;
+    height: auto;
     margin: 0 auto;
 
+}
+.lista-central{
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+}
+.lista-central li{
+    padding: 1em;
+}
+.lista-central li a{
+    display: block;
+    font-weight: bold;
+    text-decoration: none;
+    transition: transform 0.5s ease-in-out, color 0.5s ease;
+    color: #121212;
+    cursor: pointer;
+}
+.lista-central li a:hover{
+    transform: scale(1.1);
+    color: #3f2266;
 }
 .bnn-general{
     margin: 0 auto;
@@ -84,14 +123,15 @@ font-family: 'Roboto';
     width: 100%;
     height: auto;
 }
+.cont-dest{
+    width: 80%;
+    margin: 0 auto;
+}
 .destacados{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, auto);
     gap: 1em;
-    width: 70%;
-    height: auto;
-    margin: 0 auto;
     margin-top: 1em;
 }
 
@@ -120,17 +160,31 @@ font-family: 'Roboto';
 /* Estilos small card*/
 .small-card{
     display: flex;
-    flex-direction: row;
     border: 1px solid #121212;
     border-radius: 8px;
     padding: 1em;
     gap: 0.5em;
+    width: auto;
+    background-color: white;
+    color: #121212;
+    transition: transform 0.5s ease;
+}
+.small-card:hover{
+    transform: scale(1.05);
+}
+.cont-img-s-card{
+    width: auto;
+    flex-shrink: 0;
 }
 .img-s-card{
     width: 100%;
     height: auto;
 }
-
+.col-der{
+    
+    width: auto;
+    text-align: center;
+}
 .desc-s-card{
     width: auto;
 }
@@ -141,6 +195,7 @@ font-family: 'Roboto';
     font-size: 1.2em;
     font-weight: bold;
 }
+
 /* Estilos small card*/
 .cont-cat{
     display: flex;
@@ -156,6 +211,10 @@ font-family: 'Roboto';
 .caja-g{
     width: 300px;
     height: 100%;
+    transition: transform 1.5s ease;
+}
+.caja-g:hover{
+    transform: scale(1.05);
 }
 .caja-g img{
     width: 100%;
@@ -171,6 +230,10 @@ font-family: 'Roboto';
 .caja-n{
     width: 190px;
     height: 175px;
+    transition: transform 1.5s ease;
+}
+.caja-n:hover{
+    transform: scale(1.05);
 }
 .caja-n img{
     width: 100%;
@@ -179,20 +242,180 @@ font-family: 'Roboto';
     overflow: hidden;
     border-radius: 8px;
 }
+.cont-ofertas{
+    width: 80%;
+    margin: 0 auto;
+}
 .ofertas{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, auto);
     gap: 1em;
-    width: 70%;
-    height: auto;
-    margin: 0 auto;
     margin-top: 1em;
 }
 .promos{
     border: 1px solid black;
     width: 100%;
-    height: 250px;
+    height: 200px;
     margin: 0 auto;
     margin-top: 1em;
+}
+.cont-title-marc p{
+    font-size: 1.5em;
+    margin-left: 1em;
+    font-weight: 500;
+}
+.btn-marcas{
+    margin-left: 0.5em;
+    border: 2px solid black;
+    padding: 0.2em;
+    width: 120px;
+    border-radius: 15px;
+    font-size: 1.2em;
+    font-weight: 500;
+    transition: background-color 0.3s, color 0.3s;
+}
+.btn-marcas:focus{
+    background-color: slateblue;
+    color: whitesmoke;
+}
+.cont-prodcs{
+    display: flex;
+    width: 65%;
+    margin: 0 auto;
+    height: auto;
+    gap: 1em;
+    padding: 1.2em;
+}
+.cont-img-marc{
+  width: 300px;
+  height: 100%;
+}
+.cont-img-marc img{
+    width: 100%;
+    border-radius: 8px;
+
+}
+.col-marc{
+    display: flex;
+    gap: 1em;
+}
+footer {
+  background-color: #494848;
+  color: whitesmoke;
+  padding: 1.2em;
+}
+.footer-contenido {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1em;
+  width: 100%;
+  margin: 0 auto;
+}
+.cont-nos{
+    flex: 1 1 auto;
+}
+.nosotros{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+.nosotros li a{
+  text-decoration: none;
+  color: whitesmoke;
+  transition: color 0.5s ease
+}
+.nosotros li a:hover{
+    color: slateblue;
+}
+.cont-redes {
+  margin-top: 2em;
+  text-align: center;
+}
+
+.redes {
+  margin-top: 0.5em;
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+}
+
+.redes img {
+  width: 48px;
+  height: 48px;
+  transition: transform 0.2s;
+}
+
+.redes img:hover {
+  transform: scale(1.2);
+}
+.copyright {
+  display: flex;
+  margin-top: 2em;
+  padding-top: 1em;
+  justify-content: center;
+  font-size: 0.875em;
+  color: #ccc;
+  gap: 0.2em;
+}
+
+.copyright img {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.2s;
+}
+
+.copyright img:hover {
+  transform: scale(1.2);
+}
+.footer-links{
+  padding: 1.2em;
+  color: black;
+  display: none;
+  margin-top: 1em;
+  width: 100%;
+  height: 300px;
+  background-color: whitesmoke;
+}
+a.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+  cursor: default;
+  text-decoration: none;
+}
+
+
+
+
+
+@media(max-width:768px){
+    .content{
+        width: 100%;
+        margin: 0 auto;
+    }
+    .bnn-general{
+        width: 100%;
+    }
+    .destacados{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1em;
+    margin: 0 auto;
+    margin-top: 1em;
+}
+    .bnn-armado{
+        width: 100%;
+    }
+    .cont-ofertas{
+    width: 90%;
+    margin: 0 auto;
+}
+.ofertas{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1em;
+    margin-top: 1em;
+}
 }
