@@ -35,6 +35,8 @@ body.dark-mode{
   z-index: 1000;
   background-color: #494848;
   justify-content: space-between;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 .logo{
     width: auto;
@@ -100,7 +102,13 @@ body.dark-mode{
   cursor: pointer;
   padding: 0;
 }
-
+.list-lat button i{
+    font-size: 2em;
+    color: white;
+}
+.list-lat button img{
+    width: 2em;
+}
 .content{
     width: 100%;
     height: auto;
@@ -113,15 +121,12 @@ body.dark-mode{
     width: 60%;
     height: auto;
     margin: 0 auto;
-
+    
 }
 .lista-central{
     display: flex;
     list-style: none;
     justify-content: space-between;
-}
-.lista-central li{
-    padding: 1em;
 }
 .lista-central li a{
     color: inherit;
@@ -164,7 +169,6 @@ body.dark-mode{
 
 .cont-armado{
     width: 100%;
-    padding: 1.2em;
 }
 .bnn-armado{
     display: block;
@@ -316,6 +320,8 @@ body.dark-mode{
     border-radius: 15px;
     font-size: 1.2em;
     font-weight: 500;
+    background-color: #4a529e;
+    color: white;
     transition: background-color 0.3s, color 0.3s;
 }
 .btn-marcas:focus{
@@ -403,7 +409,6 @@ footer {
   color: #ccc;
   gap: 0.2em;
 }
-
 .copyright img {
   width: 24px;
   height: 24px;
@@ -433,8 +438,6 @@ a.disabled {
 @media(max-width:768px){
     .encabezado{
         height: auto;
-       
-        position: relative;
     }
     .btn-burger{
         display: block;
@@ -444,21 +447,23 @@ a.disabled {
     .btn-burger i{
         font-size: 2em;
     }
-    .menu-burger{
-        display: none;
+    .menu-burger{ 
         flex-direction: column;
         position: absolute;
         gap: 0.5em;
         width: 100%;
-        top: 100%;
+        top: 70%;
         left: 0;
         right: 0;
         background-color: #404788;
-        border-bottom-left-radius: 10px;
-        border-bottom-right-radius: 10px;
+        border-radius: 10px;
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 0.8s ease;
     }
     .menu-burger.show{
         display: flex;
+        max-height: 90px;
     }
     .menu-burger .busqueda{
         width: 100%;  
@@ -466,28 +471,41 @@ a.disabled {
 }
     .menu-burger .busqueda input{
         width: 100%;
+        padding: 0.5em;
     }
     .menu-burger .btn-lateral{
         display: flex;
         justify-content: space-between;
         gap: 0.5em;
 }
-    
     .menu-burger .btn-lateral button{
         flex: 1;
     }
+    .list-lat button i{
+        font-size: 1.5em;
+}
+    .list-lat button img{
+        width: 1.5em;
+}
     .content{
         width: 100%;
         margin: 0 auto;
     }
+    .cont-main{
+        padding: 0;
+    }
     .nav-central{
-        width: 100%;
-        
+        width: 90%;
+        padding: 0.5em;
+    }
+    .lista-central{
+        justify-content: space-between;
+        margin: 0;
+        padding: 0;
     }
     .lista-central li{
-        padding: 0;
-}
-    
+        padding: 0.3em;        
+} 
     .bnn-general{
         width: 100%;
     }
@@ -499,7 +517,9 @@ a.disabled {
         margin-top: 1em;
 }
     .bnn-armado{
-        width: 100%;
+        margin-top: 1em;
+        background-position: right;
+        height: 150px;
     }
     .cont-cat-b{
         display: grid;
@@ -520,6 +540,11 @@ a.disabled {
         gap: 1em;
         margin-top: 1em;
 }
+    .btn-marcas{
+        width: 90%;
+        margin-left: 1em;
+        margin-bottom: 0.5em;
+}
     .cont-prodcs{
         width: 90%;
         margin: 0 auto;
@@ -530,4 +555,8 @@ a.disabled {
     .col-marc{
         scroll-snap-align: auto;
     }
+    .copyright {
+        display: flex;
+        flex-wrap: wrap;
+}
 }
