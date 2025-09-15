@@ -1,3 +1,22 @@
+//Menu burger
+const btnBurger=document.getElementById('btnBurger');
+const menuBurger=document.getElementById('menuBurger');
+
+btnBurger.addEventListener('click',function(){
+    menuBurger.classList.toggle('show');
+    const cerrarBurger=btnBurger.querySelector('i');
+    if(menuBurger.classList.contains('show')){
+        cerrarBurger.classList.remove('bi-list');
+        cerrarBurger.classList.add('bi-x');
+        
+    }else{
+        cerrarBurger.classList.remove('bi-x');
+        cerrarBurger.classList.add('bi-list');
+        
+    }
+});
+
+
 // card pequeña
 function smallCardDinamic(contenedor){
     const smallCard=document.createElement('div');
