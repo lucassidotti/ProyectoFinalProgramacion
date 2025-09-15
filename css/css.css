@@ -124,6 +124,7 @@ body.dark-mode{
     padding: 1em;
 }
 .lista-central li a{
+    color: inherit;
     display: block;
     font-weight: bold;
     text-decoration: none;
