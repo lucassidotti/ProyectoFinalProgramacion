@@ -23,14 +23,17 @@
         <div class="btn-lateral">
           <ul class="list-lat">
                 <li>
-                 <button aria-label="logueo">
+                 <button aria-label="logueo"
+                 data-bs-toggle="offcanvas" 
+                  data-bs-target="#offcanvasRight1"
+                  aria-controls="offcanvasRight1">
                     <i class="bi bi-person-workspace"></i>
                 </button>
                 </li>
                 <li>
                 <button aria-label="Carrito"
                   data-bs-toggle="offcanvas" 
-                  data-bs-target="#offcanvasRight"
+                  data-bs-target="#offcanvasRight" 
                   aria-controls="offcanvasRight">
                     <i class="bi bi-cart"></i>
                 </button>
@@ -45,12 +48,12 @@
         </div>
     </header>
     
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight1" aria-labelledby="offcanvasRightLabel">
       <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasRightLabel">Tu carrito</h5>
+        <h5 class="offcanvas-title" id="offcanvasRightLabel">Bienvenido </h5>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
      </div>
-      <div class="offcanvas-body" id="canvasBody"></div>
+      <div class="offcanvas-body"></div>
     </div>
 
     <div class="content">

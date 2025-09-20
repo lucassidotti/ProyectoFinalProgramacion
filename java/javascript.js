@@ -15,7 +15,53 @@ if(btnBurger && menuBurger){
         
         }
 });
-}
+};
+
+// Esto agrega un offcanva clonado totalmente de Boostrap
+if (!document.getElementById('offcanvasRight')) {
+const offcanva=document.createElement('div');
+const offcanvaHeader=document.createElement('div');
+const offcanvaTitle=document.createElement('h5');
+const offcanvaCerrar=document.createElement('button');
+const offcanvaBody=document.createElement('div');
+const cartItems=document.createElement('div');
+const buyBtn=document.createElement('button');
+
+
+offcanva.setAttribute('class','offcanvas offcanvas-end');
+offcanva.setAttribute('tabindex','-1');
+offcanva.setAttribute('id','offcanvasRight');
+offcanva.setAttribute('aria-labelledby','offcanvasRightLabel');
+document.body.appendChild(offcanva);
+
+offcanvaHeader.setAttribute('class','offcanvas-header');
+offcanva.appendChild(offcanvaHeader);
+
+offcanvaTitle.setAttribute('class','offcanvas-title');
+offcanvaTitle.setAttribute('id','offcanvasRightLabel');
+offcanvaTitle.textContent='Tu carrito';
+offcanvaHeader.appendChild(offcanvaTitle);
+
+offcanvaCerrar.setAttribute('type','button');
+offcanvaCerrar.setAttribute('class','btn-close');
+offcanvaCerrar.setAttribute('data-bs-dismiss','offcanvas');
+offcanvaCerrar.setAttribute('aria-label','close')
+offcanvaHeader.appendChild(offcanvaCerrar);
+
+offcanvaBody.setAttribute('class','offcanvas-body d-flex flex-column');
+offcanva.appendChild(offcanvaBody);
+
+cartItems.setAttribute('id','cart-items');
+cartItems.setAttribute('class','mb-3');
+offcanvaBody.appendChild(cartItems);
+
+buyBtn.setAttribute('id','buy-btn');
+buyBtn.setAttribute('class','btn btn-success mt-auto comprar');
+buyBtn.textContent='Comprar';
+offcanvaBody.appendChild(buyBtn);
+};
+// Esto agrega un offcanva clonado totalmente de Boostrap
+
 // card pequeña
 function smallCardDinamic(contenedor){
     const smallCard=document.createElement('div');
@@ -159,7 +205,7 @@ for(let i=0;i<=2;i++){
 //Carrito
 let datos=['$800.000','Monitor Lenovo ThinkVision 21.5" FHD IPS 75Hz Anti Glare VESA']
 
-const bodyCanva=document.getElementById('canvasBody');
+const bodyCanva=document.getElementById('cart-items');
 const listaCarrito=document.createElement('ul');
 const agregarCarrito=document.getElementById('btnAgregarCarrito');
 if(bodyCanva && agregarCarrito){
