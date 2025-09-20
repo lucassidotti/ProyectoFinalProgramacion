@@ -28,7 +28,10 @@
                 </button>
                 </li>
                 <li>
-                <button aria-label="Carrito">
+                <button aria-label="Carrito"
+                  data-bs-toggle="offcanvas" 
+                  data-bs-target="#offcanvasRight"
+                  aria-controls="offcanvasRight">
                     <i class="bi bi-cart"></i>
                 </button>
                  </li>
@@ -41,6 +44,15 @@
         </div>
         </div>
     </header>
+    
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasRightLabel">Tu carrito</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+     </div>
+      <div class="offcanvas-body" id="canvasBody"></div>
+    </div>
+
     <div class="content">
     <div class="cont-main">
         <nav class="nav-central">
@@ -111,7 +123,9 @@
     <section class="cont-ofertas">
         <div class="ofertas"></div>
     </section>
-    <aside class="promos">promos</aside>
+    <aside class="promos">promos
+      <button class="btn btn-card-agregar" id="btnAgregarCarrito">Agregar</button>
+    </aside>
     <section class="">
       <div class="cont-head-marc">
       <div class="cont-title-marc">

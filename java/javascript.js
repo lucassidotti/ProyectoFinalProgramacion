@@ -1,22 +1,21 @@
 //Menu burger
 const btnBurger=document.getElementById('btnBurger');
 const menuBurger=document.getElementById('menuBurger');
-
-btnBurger.addEventListener('click',function(){
-    menuBurger.classList.toggle('show');
-    const cerrarBurger=btnBurger.querySelector('i');
-    if(menuBurger.classList.contains('show')){
-        cerrarBurger.classList.remove('bi-list');
-        cerrarBurger.classList.add('bi-x');
+if(btnBurger && menuBurger){
+    btnBurger.addEventListener('click',function(){
+        menuBurger.classList.toggle('show');
+        const cerrarBurger=btnBurger.querySelector('i');
+        if(menuBurger.classList.contains('show')){
+         cerrarBurger.classList.remove('bi-list');
+         cerrarBurger.classList.add('bi-x');
         
-    }else{
-        cerrarBurger.classList.remove('bi-x');
-        cerrarBurger.classList.add('bi-list');
+        }else{
+         cerrarBurger.classList.remove('bi-x');
+         cerrarBurger.classList.add('bi-list');
         
-    }
+        }
 });
-
-
+}
 // card pequeña
 function smallCardDinamic(contenedor){
     const smallCard=document.createElement('div');
@@ -51,37 +50,40 @@ function smallCardDinamic(contenedor){
 }
 const destacados=document.getElementById('destacados')
 const ofertas=document.querySelector('.ofertas')
-
-for(let i=0;i<=5;i++){
-    smallCardDinamic(destacados)
-
+if(destacados){
+    for(let i=0;i<=5;i++){
+        smallCardDinamic(destacados)
+    }
 };
-for(let i=0;i<=5;i++){
-    smallCardDinamic(ofertas)
-
+if(ofertas){
+    for(let i=0;i<=5;i++){
+        smallCardDinamic(ofertas)
+    }
 };
 // card pequeña
 
 // dark mode
-const body=document.body
-const btnMode=document.getElementById('btn-mode')
-const icono=document.getElementById('icono')
-function modoOscuro(cont,boton){
+const body = document.body;
+const btnMode = document.getElementById('btn-mode');
+const icono = document.getElementById('icono');
+
+function modoOscuro(cont){
     if(cont.classList.contains('dark-mode')){
         cont.classList.remove('dark-mode');
-        icono.src='imagenes/moon-stars-fill.svg'
-        
-
-    }else{
+        icono.src = 'imagenes/moon-stars-fill.svg';
+    } else {
         cont.classList.add('dark-mode');
-        icono.src='imagenes/sun-fill.svg'
-        
-       
-        
+        icono.src = 'imagenes/sun-fill.svg';
     }
-};
-btnMode.addEventListener('click',()=>modoOscuro(body));
+}
 
+if(btnMode && icono){
+    btnMode.addEventListener('click', ()=> {
+        modoOscuro(body);
+    });
+}
+
+//Elegir marca
 function elegirMarca(){
     const btnAsus=document.getElementById('btnAsus');
     const btnLogi=document.getElementById('btnLogi');
@@ -89,21 +91,33 @@ function elegirMarca(){
     const btnCorsair=document.getElementById('btnCorsair');
     const btnThermal=document.getElementById('btnThermal');
     const imgMarca=document.getElementById('imgMarc')
-    btnAsus.addEventListener('click',()=>{
-        imgMarca.src='imagenes/asus-logo.png'
-    })
-    btnLogi.addEventListener('click',()=>{
-        imgMarca.src='imagenes/logi-logo.png'
-    })
-    btnSteel.addEventListener('click',()=>{
-        imgMarca.src='imagenes/steel-logo.png'
-    })
-    btnCorsair.addEventListener('click',()=>{
-        imgMarca.src='imagenes/corsair-logo.png'
-    })
-    btnThermal.addEventListener('click',()=>{
-        imgMarca.src='imagenes/thermal-logo.png'
-    })
+     if(imgMarca) {  
+        if(btnAsus) {
+            btnAsus.addEventListener('click', ()=> {
+                imgMarca.src='imagenes/asus-logo.png';
+            });
+        }
+        if(btnLogi) {
+            btnLogi.addEventListener('click', ()=> {
+                imgMarca.src='imagenes/logi-logo.png';
+            });
+        }
+        if(btnSteel) {
+            btnSteel.addEventListener('click', ()=> {
+                imgMarca.src='imagenes/steel-logo.png';
+            });
+        }
+        if(btnCorsair) {
+            btnCorsair.addEventListener('click', ()=> {
+                imgMarca.src='imagenes/corsair-logo.png';
+            });
+        }
+        if(btnThermal) {
+            btnThermal.addEventListener('click', ()=> {
+                imgMarca.src='imagenes/thermal-logo.png';
+            });
+        }
+    }
 };
 elegirMarca();
 
@@ -136,9 +150,80 @@ cardBody.appendChild(bodyPCardB)
 };
 
 const colMarc=document.getElementById('colMarc');
+if(colMarc){
 for(let i=0;i<=2;i++){
     BigCardDinamic(colMarc)
 };
+};
 
+//Carrito
+let datos=['$800.000','Monitor Lenovo ThinkVision 21.5" FHD IPS 75Hz Anti Glare VESA']
+
+const bodyCanva=document.getElementById('canvasBody');
+const listaCarrito=document.createElement('ul');
+const agregarCarrito=document.getElementById('btnAgregarCarrito');
+if(bodyCanva && agregarCarrito){
+    agregarCarrito.addEventListener('click',function(){
+        bodyCanva.appendChild(listaCarrito);
+        listaCarrito.classList.add('lista-carrito');
+        const items=document.createElement('li');
+
+        const contImgCanva=document.createElement('div');
+        contImgCanva.classList.add('img-cont-canva')
+        items.appendChild(contImgCanva);
+        const imgCanva=document.createElement('img');
+        imgCanva.src= "imagenes/monitor.jpg"
+        contImgCanva.appendChild(imgCanva);
+
+        const descProdCarrito = document.createElement('span');
+        descProdCarrito.textContent = datos.join(', ');
+        descProdCarrito.classList.add('desc-prod-carrito')
+        items.appendChild(descProdCarrito);
+
+        let contador=1;
+        const divCont=document.createElement('div');
+        divCont.classList.add('div-contador');
+        items.appendChild(divCont);
+        
+        const btnMenos=document.createElement('button');
+        const iconMenos=document.createElement('i')
+        btnMenos.addEventListener('click',()=>{
+            if(contador>1){
+                contador=contador-1
+                scont.innerText=contador;
+            }
+        });
+        iconMenos.setAttribute('class','bi bi-dash');
+        btnMenos.appendChild(iconMenos);
+        btnMenos.classList.add('btn-menos');
+        divCont.appendChild(btnMenos);
+
+        const scont=document.createElement('span');
+        scont.innerText=contador;
+        scont.classList.add('contador-text')
+        divCont.appendChild(scont);
+        
+        const btnMas=document.createElement('button');
+        const iconMas=document.createElement('i')
+        btnMas.addEventListener('click',()=>{
+            contador=contador+1;
+            scont.innerText=contador;
+        });
+        iconMas.setAttribute('class','bi bi-plus');
+        btnMas.appendChild(iconMas);
+        btnMas.classList.add('btn-mas');
+        divCont.appendChild(btnMas);
+
+        const eliminar=document.createElement('button');
+        eliminar.classList.add('eliminar-item');
+        eliminar.innerText='Eliminar';
+        items.appendChild(eliminar);
+        eliminar.addEventListener('click',()=>{
+            items.remove()
+        });
+         listaCarrito.appendChild(items);
+    })
+
+};
 
 

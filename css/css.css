@@ -19,6 +19,87 @@ body.dark-mode{
 }
 
 /* dark-mode*/
+
+/* Estilo carrito*/
+.lista-carrito{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.lista-carrito li{
+     display: flex;
+     flex-wrap: wrap;
+     align-items: center;
+     gap: 1em;
+     border: 1px solid black;
+     padding: 0.5em;
+     border-radius: 8px;
+     margin-bottom: 1em;
+}
+.desc-prod-carrito{
+    font-weight: 500;
+    border: 1px solid black;
+    padding: 0.5em;
+    border-radius: 8px;
+    width: 200px;
+    background-color: whitesmoke;
+}
+.cont-img-canva{
+    width: 100px;
+}
+.cont-img-canva img{
+    width: 100%;
+}
+.div-contador{
+    width: 100px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
+    border: 1px solid black;
+    border-radius: 8px;
+}
+.contador-text{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1em;
+}
+.btn-mas , .btn-menos{
+   width: 24px;
+   height: 24px;
+   border: none;
+   border-radius: 4px;
+   background: none;
+   color: #3483fa;
+   transition: background-color 1s ease;
+}
+.btn-mas i , .btn-menos i{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 24px;
+    font-size: 1.5em;
+}
+.btn-mas:hover , .btn-menos:hover{
+    background-color: rgba(0, 191, 255, 0.5);
+    border-radius: 4px;
+}
+.eliminar-item{
+    background: none;
+    color: #3483fa;
+    width: auto;
+    padding: 0.5em;
+    height: 2em;
+    border: none;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+/* Estilo carrito*/
+
 .content{
     max-width: 1300px;
     margin: 0 auto;
