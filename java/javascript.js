@@ -43,7 +43,7 @@ offcanvaTitle.textContent='Tu carrito';
 offcanvaHeader.appendChild(offcanvaTitle);
 
 offcanvaCerrar.setAttribute('type','button');
-offcanvaCerrar.setAttribute('class','btn-close');
+offcanvaCerrar.setAttribute('class','btn-close btn-close-white');
 offcanvaCerrar.setAttribute('data-bs-dismiss','offcanvas');
 offcanvaCerrar.setAttribute('aria-label','close')
 offcanvaHeader.appendChild(offcanvaCerrar);
@@ -93,6 +93,10 @@ function smallCardDinamic(contenedor){
     const s2=document.createElement('span');
     s2.innerText='500.000';
     precioSCard.appendChild(s2)
+    agrBtnSCard=document.createElement('button');
+    agrBtnSCard.setAttribute('class','btn btn-success agregarCarrito');
+    agrBtnSCard.innerText='Agregar'
+    colDer.appendChild(agrBtnSCard);
 }
 const destacados=document.getElementById('destacados')
 const ofertas=document.querySelector('.ofertas')
@@ -192,7 +196,11 @@ cardBody.appendChild(bodySpan);
 const bodyPCardB=document.createElement('p');
 bodyPCardB.setAttribute('class','card-text fs-5');
 bodyPCardB.innerText='$ 850.000';
-cardBody.appendChild(bodyPCardB)
+cardBody.appendChild(bodyPCardB);
+const agrBtnBCard=document.createElement('button');
+agrBtnBCard.setAttribute('class','btn btn-success agregarCarrito');
+agrBtnBCard.innerText='Agregar'
+cardBody.appendChild(agrBtnBCard);
 };
 
 const colMarc=document.getElementById('colMarc');
@@ -207,12 +215,14 @@ let datos=['$800.000','Monitor Lenovo ThinkVision 21.5" FHD IPS 75Hz Anti Glare 
 
 const bodyCanva=document.getElementById('cart-items');
 const listaCarrito=document.createElement('ul');
-const agregarCarrito=document.getElementById('btnAgregarCarrito');
-if(bodyCanva && agregarCarrito){
-    agregarCarrito.addEventListener('click',function(){
+const agregarCarrito=document.querySelectorAll('.agregarCarrito');
+if(bodyCanva && agregarCarrito.length > 0){
+    agregarCarrito.forEach(agregar => {
+       agregar.addEventListener('click',function(){
         bodyCanva.appendChild(listaCarrito);
         listaCarrito.classList.add('lista-carrito');
         const items=document.createElement('li');
+        items.style.backgroundColor='whitesmoke'
 
         const contImgCanva=document.createElement('div');
         contImgCanva.classList.add('img-cont-canva')
@@ -268,8 +278,177 @@ if(bodyCanva && agregarCarrito){
             items.remove()
         });
          listaCarrito.appendChild(items);
-    })
-
+    });
+    });
 };
 
+//Registro - Login sacado de github
+const flipCard = document.getElementById('flipCard');
+    const registerText = document.getElementById('registerText');
+    const loginText = document.getElementById('loginText');
 
+    registerText.addEventListener('click', () => {
+        flipCard.style.transform = 'rotateY(180deg)';
+        msjNombre.innerText='';
+        msjTel.innerText='';
+        msjMail.innerText='';
+        msjPassword.innerText='';
+        msjFechaNac.innerText='';
+    });
+
+    loginText.addEventListener('click', () => {
+        flipCard.style.transform = 'rotateY(0deg)';
+        msjMailLogin.innerText='';
+        msjPasswordLogin.innerText='';
+    });
+
+//Validacion de formulario de registro
+const registerForm=document.getElementById('registerForm')
+const msjNombre=document.getElementById('msjNombre');
+const msjTel=document.getElementById('msjTel');
+const msjMail=document.getElementById('msjMail');
+const msjPassword=document.getElementById('msjPassword');
+const msjFechaNac=document.getElementById('msjFechaNac');
+
+registerForm.addEventListener('submit',function(e){
+    e.preventDefault();
+    msjNombre.innerText='';
+    msjTel.innerText='';
+    msjMail.innerText='';
+    msjPassword.innerText='';
+    msjFechaNac.innerText='';
+    const nombreReg=document.getElementById('nombreReg').value.trim();
+    const telReg=document.getElementById('telReg').value.trim();
+    const mailReg=document.getElementById('mailReg').value.trim();
+    const passwordReg=document.getElementById('passwordReg').value.trim();
+    const fechaNacReg=document.getElementById('fechaNacReg').value;
+    let erroresReg=false;
+
+    if(nombreReg===''){
+        msjNombre.innerText='Ingrese su nombre'
+        msjNombre.style.color='red'
+        erroresReg=true
+    };
+    if(!/^\d{7,15}$/.test(telReg)){
+        msjTel.innerText='Ingrese su telefono'
+        msjTel.style.color='red'
+        erroresReg=true
+    };
+
+    const mailRegex=/^[^\s@]+@[^\s@]+.[^\s@]+$/;
+    if(mailReg===''){
+        msjMail.innerText='Ingrese su correo'
+        msjMail.style.color='red'
+        erroresReg=true
+    }else if(!mailRegex.test(mailReg)){
+        msjMail.innerText='Su mail es invalido.'
+        msjMail.style.color='red'
+        erroresReg=true
+    };
+
+    if(passwordReg===''){
+        msjPassword.innerText='Ingrese una contraseña'
+        msjPassword.style.color='red'
+        erroresReg=true
+    };
+
+    if(fechaNacReg===''){
+        msjFechaNac.innerText='Seleccione su fecha de nacimiento';
+        msjFechaNac.style.color='red';
+        erroresReg=true;
+    }else{
+        const fechaNacRegIng=new Date(fechaNacReg);
+        const fechaHoy=new Date();
+        let edad=fechaHoy.getFullYear() - fechaNacRegIng.getFullYear();
+        const mes=fechaHoy.getMonth() - fechaNacRegIng.getMonth();
+        const dia=fechaHoy.getDate() - fechaNacRegIng.getDate();
+        if (mes < 0 || (mes === 0 && dia < 0)){
+             edad--; 
+            };
+        
+        if (edad < 18) {
+            msjFechaNac.innerText = 'Debe ser mayor de 18 años para registrarse';
+            msjFechaNac.style.color = 'red';
+            erroresReg = true;
+        };
+    };
+
+    registerForm.submit();
+})
+
+//Validacion de formulario de login
+const loginForm=document.getElementById('loginForm');
+const msjMailLogin=document.getElementById('msjMailLogin');
+const msjPasswordLogin=document.getElementById('msjPasswordLogin');
+
+if(loginForm){
+    loginForm.addEventListener('submit', function(e){
+        
+        msjMailLogin.innerText='';
+        msjPasswordLogin.innerText='';
+        
+        const mailLogin=document.getElementById('mailLogin').value.trim();
+        const passwordLogin=document.getElementById('passwordLogin').value.trim();
+        let erroresLogin=false;
+        
+        const mailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if(mailLogin===''){
+            msjMailLogin.innerText = 'Ingrese su correo electrónico';
+            msjMailLogin.style.color = 'red';
+            erroresLogin = true;
+        }else if(!mailRegex.test(mailLogin)){
+            msjMailLogin.innerText='El formato del correo es inválido';
+            msjMailLogin.style.color='red';
+            erroresLogin=true;
+        }
+        
+        if(passwordLogin===''){
+            msjPasswordLogin.innerText='Ingrese su contraseña';
+            msjPasswordLogin.style.color='red';
+            erroresLogin=true;
+        } 
+
+        if(erroresLogin){
+            e.preventDefault();
+        }
+});    
+}
+
+
+    const params = new URLSearchParams(window.location.search);
+    const login = params.get('login');     
+    const nombre = params.get('nombre');    
+    //Busca un nombre asociado al logueo, lo decodifica y lo asocia al id con text content
+    //El usuario se loguea con mail y pass pero en la bienvenida se muestra el nombre asociado al registro
+    //Esto se va a mostrar en el offcanvas de registro.
+    if (nombre) {
+        const nombreUsuario = document.getElementById('nombre_usuario');
+        if (nombreUsuario) {
+            nombreUsuario.textContent = 'Bienvenido ' + decodeURIComponent(nombre);
+        }
+    }
+    //Aca reutilice un toast que tenia de otro proyecto y lo fui adaptando para que muestre algunas cosas en el logueo
+    //Si el logueo es "success" todo salio bien entonces muestra la bienvenida
+    if (login === 'success') {
+        iziToast.success({
+            title: '¡Bienvenido ' + (nombre ? decodeURIComponent(nombre) : '') + '!',//Lo mismo que arriba con el nombre
+            message: 'Has iniciado sesión correctamente',
+            position: 'topRight',
+            timeout: 3000,
+            onOpening: function () {
+                const btnCerrarLog = document.querySelector('#offcanvasRight1 .btn-close');
+                if (btnCerrarLog) btnCerrarLog.click();
+            }//Esa funcion cierra el canva y muestra el msj
+        });
+        //Mensajes de error asociados al logueo
+    } else if (login === 'wrong_pass') {
+        iziToast.error({ title: 'Error', message: 'Contraseña incorrecta', position: 'topRight' });
+    } else if (login === 'no_user') {
+        iziToast.warning({ title: 'Atención', message: 'Usuario no registrado', position: 'topRight' });
+    }  else if (login === 'server_error') {
+        iziToast.error({ title: 'Servidor', message: 'Error de conexión', position: 'topRight' });
+    }
+
+    if (login) {
+        window.history.replaceState({}, document.title, window.location.pathname);
+    }
