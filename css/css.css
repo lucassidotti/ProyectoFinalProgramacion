@@ -223,13 +223,14 @@ body.dark-mode{
   border-bottom-right-radius: 10px;
 }
 .logo{
-    width: auto;
-    height: 100px;
-    flex-shrink: 1 1 auto;
+    width: 500px;
+    height: 140px;
+    max-height: 140px;
 }
 .img-logo{
-    width: 100%;
-    object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 .btn-burger{
     display: none;
