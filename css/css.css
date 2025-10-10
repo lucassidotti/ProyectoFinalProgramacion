@@ -212,7 +212,7 @@ body.dark-mode{
   flex-wrap: nowrap;
   flex: 0 0 auto;
   width: 100%;
-  height: 150px;
+  height: auto;
   padding: 1.2em;
   position: sticky;
   top: 0;
@@ -224,13 +224,13 @@ body.dark-mode{
 }
 .logo{
     width: 500px;
-    height: 140px;
-    max-height: 140px;
+    height: auto;
+   
 }
 .img-logo{
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
 }
 .btn-burger{
     display: none;
@@ -491,6 +491,8 @@ body.dark-mode{
     margin-top: 1em;
 }
 .promos img{
+    width: 100%;
+    height: 250px;
     border-radius: 15px;
     overflow: hidden;
     object-fit: cover;
@@ -640,7 +642,7 @@ a.disabled {
         position: absolute;
         gap: 0.5em;
         width: 100%;
-        top: 70%;
+        top: 75%;
         left: 0;
         right: 0;
         background-color: #404788;
