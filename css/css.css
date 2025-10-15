@@ -16,6 +16,7 @@ font-family: 'Roboto';
     background-position: left;
     background-size: cover;
     background-repeat: no-repeat;
+    overflow-y: auto;
 }
 .offcanvas h5{
     color: white;
@@ -61,8 +62,6 @@ font-family: 'Roboto';
     padding: 20px;
     box-sizing: border-box;
     color: #333;
-    overflow-y: auto;
-    max-height: 100vh;
 }
 .flip-card-back {
     transform: rotateY(180deg);
@@ -246,7 +245,7 @@ body.dark-mode{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
     flex-wrap: nowrap;
     
@@ -880,7 +879,4 @@ a.disabled {
         display: flex;
         flex-wrap: wrap;
 }
-
-
-
 }
