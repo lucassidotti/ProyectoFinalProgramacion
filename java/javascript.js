@@ -311,7 +311,7 @@ const msjPassword=document.getElementById('msjPassword');
 const msjFechaNac=document.getElementById('msjFechaNac');
 
 registerForm.addEventListener('submit',function(e){
-    e.preventDefault();
+    
     msjNombre.innerText='';
     msjTel.innerText='';
     msjMail.innerText='';
@@ -372,9 +372,12 @@ registerForm.addEventListener('submit',function(e){
             erroresReg = true;
         };
     };
-
-    registerForm.submit();
-})
+    if(erroresReg){
+        e.preventDefault();
+        return;
+    }
+    
+});
 
 //Validacion de formulario de login
 const loginForm=document.getElementById('loginForm');
@@ -442,11 +445,23 @@ if(loginForm){
         });
         //Mensajes de error asociados al logueo
     } else if (login === 'wrong_pass') {
-        iziToast.error({ title: 'Error', message: 'Contraseña incorrecta', position: 'topRight' });
+        iziToast.error({ 
+            title: 'Error',
+            message: 'Contraseña incorrecta',
+            position: 'topRight' 
+        });
     } else if (login === 'no_user') {
-        iziToast.warning({ title: 'Atención', message: 'Usuario no registrado', position: 'topRight' });
+        iziToast.warning({ 
+            title: 'Atención',
+            message: 'Usuario no registrado',
+            position: 'topRight'
+        });
     }  else if (login === 'server_error') {
-        iziToast.error({ title: 'Servidor', message: 'Error de conexión', position: 'topRight' });
+        iziToast.error({ 
+            title: 'Servidor',
+            message: 'Error de conexión',
+            position: 'topRight'
+        });
     }
 
     if (login) {
