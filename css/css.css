@@ -648,7 +648,7 @@ a.disabled {
         position: absolute;
         gap: 0.5em;
         width: 100%;
-        top: 75%;
+        top: 90%;
         left: 0;
         right: 0;
         background-color: #404788;
@@ -755,4 +755,132 @@ a.disabled {
         display: flex;
         flex-wrap: wrap;
 }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+    .encabezado{
+        height: auto;
+    }
+    .btn-burger{
+        display: block;
+        color: #ccc;
+        
+    }
+    .btn-burger i{
+        font-size: 2em;
+    }
+    .menu-burger{ 
+        flex-direction: column;
+        position: absolute;
+        gap: 0.5em;
+        width: 100%;
+        top: 90%;
+        left: 0;
+        right: 0;
+        background-color: #404788;
+        border-radius: 10px;
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 0.8s ease;
+    }
+    .menu-burger.show{
+        display: flex;
+        max-height: 90px;
+    }
+    .menu-burger .busqueda{
+        width: 100%;  
+        margin: 0 auto;
+}
+    .menu-burger .busqueda input{
+        width: 100%;
+        padding: 0.5em;
+    }
+    .menu-burger .btn-lateral{
+        display: flex;
+        justify-content: space-between;
+        gap: 0.5em;
+}
+    .menu-burger .btn-lateral button{
+        flex: 1;
+    }
+    .list-lat button i{
+        font-size: 1.5em;
+}
+    .list-lat button img{
+        width: 1.5em;
+}
+    .content{
+        width: 100%;
+        margin: 0 auto;
+    }
+    .cont-main{
+        padding: 0;
+    }
+    .nav-central{
+        width: 90%;
+        padding: 0.5em;
+    }
+    .lista-central{
+        justify-content: space-between;
+        margin: 0;
+        padding: 0;
+    }
+    .lista-central li{
+        padding: 0.3em;        
+} 
+    .bnn-general{
+        width: 100%;
+    }
+    .destacados{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 1em;
+        margin: 0 auto;
+        margin-top: 1em;
+}
+    .bnn-armado{
+        margin-top: 1em;
+        background-position: right;
+        height: 150px;
+    }
+    .cont-cat-b{
+        display: grid;
+        grid-template-columns: 150px 150px repeat(2, 190px);
+        grid-template-rows: repeat(3, 175px);
+        width: 100%;
+        gap: 1em;
+        padding: 1.2em;
+    }
+    .cont-ofertas{
+        width: 90%;
+        margin: 0 auto;
+}
+    .ofertas{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 1em;
+        margin-top: 1em;
+}
+    .btn-marcas{
+        width: 90%;
+        margin-left: 1em;
+        margin-bottom: 0.5em;
+}
+    .cont-prodcs{
+        width: 90%;
+        margin: 0 auto;
+        gap: 5em;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+}
+    .col-marc{
+        scroll-snap-align: auto;
+        margin-left: 2em;
+    }
+    .copyright {
+        display: flex;
+        flex-wrap: wrap;
+}
+
+
+
 }
