@@ -436,7 +436,7 @@ if(loginForm){
         iziToast.success({
             title: '¡Bienvenido ' + (nombre ? decodeURIComponent(nombre) : '') + '!',//Lo mismo que arriba con el nombre
             message: 'Has iniciado sesión correctamente',
-            position: 'topRight',
+            position: 'topCenter',
             timeout: 3000,
             onOpening: function () {
                 const btnCerrarLog = document.querySelector('#offcanvasRight1 .btn-close');
@@ -448,22 +448,21 @@ if(loginForm){
         iziToast.error({ 
             title: 'Error',
             message: 'Contraseña incorrecta',
-            position: 'topRight' 
+            position: 'topCenter' 
         });
     } else if (login === 'no_user') {
         iziToast.warning({ 
             title: 'Atención',
             message: 'Usuario no registrado',
-            position: 'topRight'
+            position: 'topCenter'
         });
     }  else if (login === 'server_error') {
         iziToast.error({ 
             title: 'Servidor',
             message: 'Error de conexión',
-            position: 'topRight'
+            position: 'topCenter'
         });
     }
-
     if (login) {
         window.history.replaceState({}, document.title, window.location.pathname);
     }
