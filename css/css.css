@@ -624,31 +624,46 @@ a.disabled {
   text-decoration: none;
 }
 /* Estilos page-productos */
+.filt-prod{
+    margin-top: 0.5em;
+}
 .list-prod{
     list-style: none;
-    margin: 0.5em;
+    margin: 0;
     padding: 0;
     width: 200px;
     height: auto;
     border: 2px solid black;
     border-left: none;
     border-bottom-right-radius: 15px;
+    background-color: rgb(250, 226, 226);
 }
 .list-prod li{
     margin-bottom: 1em;
+    margin-left: 0.5em;
 }
 .sub-list{
     margin: 0;
     padding: 0;
     list-style: none;
-    margin-left: 2em;
     display: none;
 }
-.list-prod li:hover  .sub-list{
+.sub-list li{
+    padding: 0.5em;
+    max-width: max-content;
+}
+.list-prod li:hover .sub-list{
     display: block;
 }
 .list-prod li{
     cursor: pointer;
+}
+.sub-list li:hover{
+    max-width: max-content;
+    background-color: #4a529e;
+    color: white;
+    border-radius: 8px;
+    transition:  2s ease;
 }
 /* Fin estilos page-productos */
 
