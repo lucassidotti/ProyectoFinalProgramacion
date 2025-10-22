@@ -632,11 +632,9 @@ a.disabled {
     margin: 0;
     padding: 0;
     width: 200px;
-    height: auto;
     border: 2px solid black;
     border-left: none;
     border-bottom-right-radius: 15px;
-    background-color: rgb(250, 226, 226);
 }
 .list-prod li{
     margin-bottom: 1em;
@@ -665,7 +663,25 @@ a.disabled {
     border-radius: 8px;
     transition:  2s ease;
 }
+.content-prod{
+    max-width: 1300px;
+    display: flex;
+    margin: 0 auto;
+}
+.main-prod{
+    width: 100%;
+    
+}
+.contenido-prod{
+    display: flex;
+    flex-wrap: wrap;
+    width: auto;
+    gap: 1em;
+    margin-left: 1em;
+    
+}
 /* Fin estilos page-productos */
+
 
 @media(max-width:767px){
     .encabezado{

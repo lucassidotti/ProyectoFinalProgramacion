@@ -210,6 +210,11 @@ for(let i=0;i<=2;i++){
 };
 };
 
+const contenidoProd=document.getElementById('contenidoProd')
+for(let i=0;i<=7;i++){
+    BigCardDinamic(contenidoProd)
+}
+
 //Carrito
 let datos=['$800.000','Monitor Lenovo ThinkVision 21.5" FHD IPS 75Hz Anti Glare VESA']
 
